@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=redshift -t 6500k:2700k
+Icon=redshift
+Terminal=false
+Name=Redshift
+Type=Application

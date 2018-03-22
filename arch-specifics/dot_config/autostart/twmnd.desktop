@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=twmnd
+Icon=twmnd
+Terminal=false
+Name=Notifications
+Type=Application

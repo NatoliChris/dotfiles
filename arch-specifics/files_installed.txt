@@ -1,0 +1,163 @@
+: 1470295029:0;pacman -S virtualbox
+: 1470295032:0;sudo pacman -S virtualbox
+: 1470295181:0;sudo pacman -S screenfetch
+: 1470295219:0;pacman -S qt5-x11extras
+: 1470295222:0;sudo pacman -S qt5-x11extras
+: 1470297200:0;pacman -S deluge
+: 1470297212:0;sudo pacman -S deluge
+: 1470302553:0;pacman -S xscreensaver
+: 1470302568:0;sudo pacman -S xscreensaver
+: 1470303364:0;pacman -S arandr
+: 1470303366:0;sudo pacman -S arandr
+: 1470895313:0;sudo pacman -S dex
+: 1470896190:0;pacman -S anonymous-pro
+: 1470896193:0;sudo pacman -S anonymous-pro
+: 1470896206:0;sudo pacman -S ttf-anonymous-pro
+: 1470897488:0;pacman -S firefox
+: 1470897491:0;sudo pacman -S firefox
+: 1470899478:0;pacman -S scrot
+: 1470899480:0;sudo pacman -S scrot
+: 1470905991:0;pacman -S blackarch/hydra
+: 1470905993:0;sudo pacman -S blackarch/hydra
+: 1471502224:0;sudo pacman -S evince
+: 1471502404:0;yaourt -S pacaur
+: 1471502483:0;yaourt -S pacaur
+: 1471502544:0;sudo yaourt -S pacaur
+: 1471502562:0;yaourt -S pacaur
+: 1471502880:0;yaourt -S pacaur
+: 1471502990:0;pacaur -S arachni
+: 1471504077:0;pacaur -S arachni
+: 1471504196:0;pacaur -S arachni
+: 1471504264:0;pacaur -S arachni
+: 1471504376:0;pacaur -S arachni
+: 1471504480:0;pacaur -S arachni
+: 1471504663:0;pacman -S autojump
+: 1471504666:0;sudo pacman -S autojump
+: 1471504677:0;sudo pacman -S autojump
+: 1471505993:0;pacaur -S arachni
+: 1471506115:0;pacman -S libxslt
+: 1471506118:0;sudo pacman -S libxslt
+: 1471506124:0;pacaur -S arachni
+: 1471508530:0;pacman -S ssh
+: 1471508534:0;sudo pacman -S ssh
+: 1471508570:0;sudo pacman -S openssh
+: 1471508869:0;sudo pacman -S xorg-xbindkey
+: 1471508909:0;sudo pacman -S xbindkeys
+: 1471510158:0;sudo pacman -S unzip
+: 1472023558:0;pacman -S weechat
+: 1472023870:0;sudo pacman -S chromium
+: 1472023907:0;sudo pacman -S firefox nano python2-cryptography sqlite 
+: 1472024042:0;sudo pacman -S blackarch/sqlmap
+: 1472035184:0;sudo pacman -S blackarch/hashcat
+: 1472035218:0;sudo pacman -S blackarch/oclhashcat
+: 1472110176:0;pacaur -S netcat
+: 1472112244:0;pacaur -S broadcom-wl
+: 1472116298:0;pacman -S network-manager-applet
+: 1472116301:0;sudo pacman -S network-manager-applet
+: 1472116660:0;sudo pacman -S xf86-input-libinput
+: 1472117957:0;sudo pacman -S chromium
+: 1472709998:0;pacaur -S lain-git
+: 1472713610:0;sudo pacman -S ntfs-3g
+: 1472714936:0;sudo pacman -S blackarch/chntpw
+: 1472715520:0;pacman -S bkhive samdump2
+: 1472715524:0;sudo pacman -S bkhive samdump2
+: 1472715554:0;sudo pacman -S bkhive samdump2
+: 1472715701:0;pacaur -S downgrader
+: 1472716091:0;sudo pacman -S hashcat
+: 1472716130:0;sudo pacman -S blackarch/john
+: 1473321312:0;pacaur -S franz
+: 1473325084:0;sudo pacman -S openvpn
+: 1473325099:0;sudo pacman -S easy-rsa
+: 1473665448:0;sudo pacman -S wireshark
+: 1473665469:0;sudo pacman -S wireshark-gtk
+: 1474020938:0;sudo pacman -S chromium
+: 1474020956:0;sudo pacman -S perl
+: 1474431355:0;sudo pacman -S autojump curl ffmepg git jansson libinput libva virtualbox virtualbox-host-dkms vim sqline python2-twisted-16 xf86-input-libinput
+: 1474530301:0;sudo pacman -S extra/tree
+: 1474530392:0;pacman -S p7zip
+: 1474530394:0;sudo pacman -S p7zip
+: 1474531538:0;pacaur -S blackarch/volatility
+: 1474533859:0;pacaur -S atool
+: 1474533884:0;pacman -S unrar 
+: 1474533886:0;sudo pacman -S unrar 
+: 1474899042:0;sudo pacman -S extra/ntp
+: 1474865714:0;sudo pacman -S firefox libcups openssl python2-cryptographgy wireshark-cli wireshark-common wireshark-gtk 
+: 1474865720:0;sudo pacman -S firefox libcups openssl python2-cryptography wireshark-cli wireshark-common wireshark-gtk 
+: 1475729919:0;sudo pacman -S blackarch/metasploit
+: 1475729957:0;pacaur -S metasploit
+: 1475730061:0;sudo pacman -S metasploit
+: 1475730131:0;sudo pacaur -S metasploit-git
+: 1475730134:0;pacaur -S metasploit-git
+: 1475730191:0;sudo pacman -S metasploit
+: 1475730206:0;sudo pacman -S metasploit
+: 1475730388:0;sudo pacman -S metasploit
+: 1475730491:0;pacaur -S metasploit
+: 1475731237:0;pacaur -S metasploit
+: 1475731973:0;pacaur -S metasploit
+: 1475732175:0;sudo pacman -S nmap
+: 1475732195:0;pacaur -S nmap
+: 1475732276:0;sudo pacman -S nmap
+: 1475732282:0;sudo pacman -S metasploit
+: 1475733488:0;sudo pacman -S nikto
+: 1475734058:0;sudo pacman -S metasploit
+: 1475833325:0;pacaur -S broadcom-wl
+: 1476065086:0;sudo pacman -S sleuthkit
+: 1476160407:0;sudo pacman -S mariadb-clients
+: 1476167057:0;pacman -S postgresql
+: 1476167060:0;sudo pacman -S postgresql
+: 1476175377:0;sudo pacman -S tcpdump
+: 1476332809:0;sudo pacman -S weechat
+: 1476340387:0;pacman -S zip
+: 1476340553:0;sudo pacman -S zip
+: 1476341870:0;sudo pacman -S gvim
+: 1476344512:0;sudo pacman -S smbclient
+: 1476412686:0;sudo pacman -S texlive
+: 1476412690:0;sudo pacman -S texlive-most
+: 1476414304:0;pacman -S xclip
+: 1476414305:0;sudo pacman -S xclip
+: 1476414621:0;sudo pacman -S alsa-utils
+: 1476414781:0;sudo pacman -S pulseaudio
+: 1476414810:0;sudo pacman -S pulseaudio-alsa
+: 1476496086:0;sudo pacman -S the_silver_searcher
+: 1476508463:0;sudo pacman -S burpsuite
+: 1476533831:0;sudo pacman -S redshift
+: 1476668517:0;pacaur -S spotify
+: 1476668655:0;pacaur -S spotify
+: 1476708080:0;sudo pacman -S ispell
+: 1476940998:0;pacaur -S android-studio
+: 1476941552:0;pacaur -S blackarch/android-apktool
+: 1476941570:0;pacman -S android-apktool
+: 1476941574:0;sudo pacman -S android-apktool
+: 1476942098:0;sudo pacman -S android-apktool
+: 1476943129:0;pacaur -S glxinfo
+: 1476943178:0;sudo pacman -S lib32-intel-dri
+: 1476943212:0;sudo pacman -S lib32-intel-dri
+: 1476943302:0;sudo pacman -S glxinfo
+: 1476943308:0;sudo pacaur -S glxinfo
+: 1476943313:0;pacaur -S glxinfo
+: 1476944512:0;sudo pacman -S nvidia
+: 1476944547:0;sudo pacman -S nvidia-370.28-2 nvidia-utils-370.28-1
+: 1476944553:0;sudo pacman -S nvidia
+: 1476944813:0;sudo pacman -S nvidia
+: 1476944885:0;sudo pacman -S linux-headers
+: 1476953287:0;sudo pacman -S entr
+: 1476953351:0;pacaur -S entr
+: 1477544222:0;pacaur -S texlive python2-setuptools python2-pycparser gvim vim-runtime firefox-49
+: 1477544310:0;pacaur -S texlive texlive-latexextra
+: 1477544337:0;pacaur -S  ca-certificates-mozilla
+: 1479043554:0;sudo pacman -S openvpn
+: 1479047557:0;sudo pacman -S openconnect
+: 1479047824:0;pacaur -S tmux
+: 1479086943:0;sudo pacman -S traceroute
+: 1479086948:0;sudo pacman -S mtr
+: 1479088277:0;sudo pacman -S blackarch/proxychains-ng
+: 1480056573:0;sudo pacman -S bluez bluez-utils
+: 1480114381:0;sudo pacaur -S broadcom-wl
+: 1480114387:0;pacaur -S broadcom-wl
+: 1480124307:0;pacaur -S pommed-light
+: 1480124695:0;sudo pacman -S acpi
+: 1480124936:0;sudo pacman -S xorg-xbacklight
+: 1482050534:0;cat ~/.zsh_history | grep "sudo pacman -S "
+: 1482063327:0;cat ~/.zsh_history | grep "-S "
+: 1482063330:0;cat ~/.zsh_history | grep "\-S "
+: 1482063346:0;cat ~/.zsh_history | grep "\-S " > files_installed.txt

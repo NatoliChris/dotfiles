@@ -1,0 +1,109 @@
+Host bitbucket.org
+	IdentityFile	~/.ssh/bitbucket-uni
+
+Host ucpu3
+	User cnat5672
+	HostName ucpu3.ug.it.usyd.edu.au
+
+Host ucpu2
+	User cnat5672
+	HostName ucpu2.ug.it.usyd.edu.au
+
+Host ucpu1
+	User cnat5672
+	HostName ucpu1.ug.it.usyd.edu.au
+
+
+
+Host uniweb
+	User cnat5672
+	HostName soit-usrweb-pro-1.ucc.usyd.edu.au
+
+Host artemis
+	User cnat5672
+	HostName artemis.cs.usyd.edu.au
+
+Host apollo
+	User cnat5672
+	HostName apollo.cs.usyd.edu.au
+
+Host athena
+	User cnat5672
+	HostName athena.cs.usyd.edu.au
+
+Host aphrodite
+	User cnat5672
+	HostName aphrodite.cs.usyd.edu.au
+
+Host poseidon
+	User cnat5672
+	HostName poseidon.cs.usyd.edu.au
+
+Host zeus
+	User natc
+	HostName 114.76.223.83
+	Port 2653
+
+Host hadoop1
+	User cnat5672
+	HostName soit-hdp-pro-1.ucc.usyd.edu.au
+	
+Host hadoop2
+	User cnat5672
+	HostName soit-hdp-pro-2.ucc.usyd.edu.au
+	
+Host hadoop3
+	User cnat5672
+	HostName soit-hdp-pro-3.ucc.usyd.edu.au
+	
+Host hadoop4
+	User cnat5672
+	HostName soit-hdp-pro-4.ucc.usyd.edu.au
+	
+Host hadoop5
+	User cnat5672
+	HostName soit-hdp-pro-5.ucc.usyd.edu.au
+	
+Host hadoop6
+	User cnat5672
+	HostName soit-hdp-pro-6.ucc.usyd.edu.au
+	
+Host hadoop7
+	User cnat5672
+	HostName soit-hdp-pro-7.ucc.usyd.edu.au
+	
+Host hadoop8
+	User cnat5672
+	HostName soit-hdp-pro-8.ucc.usyd.edu.au
+	
+Host hadoop9
+	User cnat5672
+	HostName soit-hdp-pro-9.ucc.usyd.edu.au
+	
+Host hadoop10
+	User cnat5672
+	HostName soit-hdp-pro-10.ucc.usyd.edu.au
+	
+Host hadoop11
+	User cnat5672
+	HostName soit-hdp-pro-11.ucc.usyd.edu.au
+	
+Host hadoop12
+	User cnat5672
+	HostName soit-hdp-pro-12.ucc.usyd.edu.au
+	
+Host hadoop13
+	User cnat5672
+	HostName soit-hdp-pro-13.ucc.usyd.edu.au
+	
+Host hadoop14
+	User cnat5672
+	HostName soit-hdp-pro-14.ucc.usyd.edu.au
+	
+Host hadoop15
+	User cnat5672
+	HostName soit-hdp-pro-15.ucc.usyd.edu.au
+
+Host itcm
+	User itcm
+	HostName staff.it.usyd.edu.au
