@@ -59,9 +59,10 @@
     set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
     set virtualedit=onemore             " Allow for cursor beyond last character
     set history=1000                    " Store a ton of history (default is 20)
-    "set spell                           " Spell checking on
+    set spell                           " Spell checking on
     set hidden                          " Allow buffer switching without saving
     set nofoldenable                    " Stop autofolding when editing
+    set smarttab
 
     " Instead of reverting the cursor to the last position in the buffer, we
     " set it to the first line when editing a git commit message
@@ -108,19 +109,19 @@
                                     " Selected characters/lines in visual mode
     endif
 
-"    if has('statusline')
-"        set laststatus=2
-"
-        " Broken down into easily includeable segments
-"        set statusline=%<%f\                     " Filename
-"        set statusline+=%w%h%m%r                 " Options
-"        set statusline+=\ [%{&ff}/%Y]            " Filetype
-"        set statusline+=\ [%{getcwd()}]          " Current dir
-"        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+    if has('statusline')
+        set laststatus=2
 
-"        let g:airline_theme='powerlineish'       " airline users use the powerline theme
-"        let g:airline_powerline_fonts=1          " and the powerline fonts
-"    endif
+       " Broken down into easily includeable segments
+        set statusline=%<%f\                     " Filename
+        set statusline+=%w%h%m%r                 " Options
+        set statusline+=\ [%{&ff}/%Y]            " Filetype
+        set statusline+=\ [%{getcwd()}]          " Current dir
+        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+
+        let g:airline_theme='powerlineish'       " airline users use the powerline theme
+        let g:airline_powerline_fonts=1          " and the powerline fonts
+    endif
 
     set backspace=indent,eol,start  " Backspace for dummies
     set linespace=0                 " No extra spaces between rows
@@ -134,7 +135,7 @@
     set ignorecase                  " Case insensitive search
     set smartcase                   " Case sensitive when uc present
     set wildmenu                    " Show list instead of just completing
-    set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
+    set wildmode=longest,full       " Command <Tab> completion, list matches, then longest common part, then all.
     set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
     set scrolljump=5                " Lines to scroll when cursor leaves screen
     set scrolloff=3                 " Minimum lines to keep above and below cursor
@@ -186,10 +187,8 @@
     " Setting Solidity
     autocmd BufNewFile,BufRead *.sol set syntax=solidity
 
-
     " Setting LaTeX to spell
     autocmd FileType tex setlocal spell
-
 " }
 
 " YouCompleteMe {
@@ -383,30 +382,79 @@
 
 " }
 
-" Plugins {
-   Bundle 'VundleVim/Vundle.vim'
-   Bundle 'nvie/vim-flake8'
-   Bundle 'kien/ctrlp.vim'
-   Bundle 'scrooloose/syntastic'
-   Bundle 'chriskempson/base16-vim'
-   Plugin 'godlygeek/tabular'
-   Plugin 'tpope/vim-surround'
-   Plugin 'altercation/vim-colors-solarized'
-   Plugin 'plasticboy/vim-markdown'
-   Plugin 'scrooloose/nerdtree.git'
-   Plugin 'jistr/vim-nerdtree-tabs'
-   Plugin 'dhruvasagar/vim-table-mode'
-   Plugin 'tomlion/vim-solidity'
-   Plugin 'rust-lang/rust.vim'
-   Plugin 'majutsushi/tagbar'
-   Plugin 'pangloss/vim-javascript'
-   Plugin 'tpope/vim-fugitive'
-   Plugin 'airblade/vim-gitgutter'
-   Plugin 'honza/vim-snippets'
-   Plugin 'Valloric/YouCompleteMe'
-   Plugin 'shime/vim-livedown'
-" }
 
+" Plugins: {
+    " Editor Stuff: {
+        Plugin 'vim-scripts/PreserveNoEOL'
+        Plugin 'editorconfig/editorconfig-vim'
+        Plugin 'ervandew/supertab'
+        Plugin 'godlygeek/tabular'
+        Plugin 'scrooloose/nerdtree'
+        Plugin 'jistr/vim-nerdtree-tabs'
+        Bundle 'scrooloose/syntastic'
+        Plugin 'tommcdo/vim-exchange'
+        Plugin 'ConradIrwin/vim-bracketed-paste'
+        Plugin 'airblade/vim-gitgutter'
+        Plugin 'honza/vim-snippets'
+        Plugin 'tpope/vim-abolish'
+        Plugin 'tpope/vim-commentary'
+        Plugin 'tpope/vim-endwise'
+        Plugin 'tpope/vim-fugitive'
+        Plugin 'tpope/vim-repeat'
+        Plugin 'tpope/vim-sleuth'
+        Plugin 'tpope/vim-surround'
+        Plugin 'tpope/vim-unimpaired'
+        Plugin 'majutsushi/tagbar'
+        Bundle 'kien/ctrlp.vim'
+        Plugin 'Valloric/YouCompleteMe'
+    "" }
+
+    " colorschemes {
+        Plugin 'altercation/vim-colors-solarized'
+        Bundle 'chriskempson/base16-vim'
+    " }
+
+    " JavaScript {
+        Plugin 'drslump/vim-syntax-js'
+        Plugin 'elzr/vim-json'
+        Plugin 'pangloss/vim-javascript'
+    " }
+
+    " NginX {
+        Plugin 'nginx.vim'
+    " }
+
+    " Pandoc {
+        Plugin 'vim-pandoc/vim-pandoc-syntax'
+    " }
+
+    " Markdown {
+        Plugin 'plasticboy/vim-markdown'
+        Plugin 'dhruvasagar/vim-table-mode'
+        Plugin 'shime/vim-livedown'
+    " }
+
+    " Python {
+        Plugin 'heavenshell/vim-pydocstring'
+        Bundle 'nvie/vim-flake8'
+    " }
+
+    " Rust {
+        Plugin 'rust-lang/rust.vim'
+    " }
+
+    " Solidity {
+        Plugin 'tomlion/vim-solidity'
+    " }
+
+    " HTML {
+        Plugin 'othree/html5.vim'
+            Plugin 'Valloric/MatchTagAlways'
+            Plugin 'mattn/emmet-vim'
+            Plugin 'xmledit'
+    " }
+
+" }
 " GUI Settings {
 
     " GVIM- (here instead of .gvimrc)
@@ -420,9 +468,7 @@
         elseif has("gui_win32")
             set guifont=Andale_Mono:h10,Menlo:h10,Consolas:h10,Courier_New:h10
         endif
-        if has('gui_macvim')
-            set transparency=5      " Make the window slightly transparent
-        endif
+        set transparency=5      " Make the window slightly transparent
     else
         if &term == 'xterm' || &term == 'screen'
             set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
