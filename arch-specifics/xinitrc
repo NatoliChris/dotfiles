@@ -1,4 +1,5 @@
 EDITOR=vim
 xset -b
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-exec awesome
+exec dbus-launch
+exec i3
