@@ -122,22 +122,22 @@
         let g:airline_powerline_fonts=1          " and the powerline fonts
     endif
 
-    set backspace=indent,eol,start  " Backspace for dummies
-    set linespace=0                 " No extra spaces between rows
-    set nu                          " Line numbers on
-    set relativenumber              " Sets relative number
-    set colorcolumn=80             " Set the maximum characters on a line to 100
-    set showmatch                   " Show matching brackets/parenthesis
-    set incsearch                   " Find as you type search
-    set hlsearch                    " Highlight search terms
-    set winminheight=0              " Windows can be 0 line high
-    set ignorecase                  " Case insensitive search
-    set smartcase                   " Case sensitive when uc present
-    set wildmenu                    " Show list instead of just completing
-    set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
-    set scrolljump=5                " Lines to scroll when cursor leaves screen
-    set scrolloff=3                 " Minimum lines to keep above and below cursor
-    set foldenable                  " Auto fold code
+    set backspace=indent,eol,start                  " Backspace for dummies
+    set linespace=0                                 " No extra spaces between rows
+    set nu                                          " Line numbers on
+    set relativenumber                              " Sets relative number
+    set colorcolumn=80                              " Set the maximum characters on a line to 100
+    set showmatch                                   " Show matching brackets/parenthesis
+    set incsearch                                   " Find as you type search
+    set hlsearch                                    " Highlight search terms
+    set winminheight=0                              " Windows can be 0 line high
+    set ignorecase                                  " Case insensitive search
+    set smartcase                                   " Case sensitive when uc present
+    set wildmenu                                    " Show list instead of just completing
+    set whichwrap=b,s,h,l,<,>,[,]                   " Backspace and cursor keys wrap too
+    set scrolljump=5                                " Lines to scroll when cursor leaves screen
+    set scrolloff=3                                 " Minimum lines to keep above and below cursor
+    set foldenable                                  " Auto fold code
     set list
     set listchars=tab:>\ ,trail:•,extends:#,nbsp:• " Highlight problematic whitespace
 " }
@@ -590,4 +590,5 @@
     let base16colorspace=256
     set background=dark
     colorscheme base16-tomorrow
+    hi Normal guibg=NONE ctermbg=NONE
 "}
