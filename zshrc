@@ -182,6 +182,14 @@ Sempre e sempre io prometto.
 export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
+NPM_PACKAGES="${HOME}/.npm-packages"
+NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+PATH="$NPM_PACKAGES/bin:$PATH"
+
+unset MANPATH
+MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+
 #Custom functions
 function f() { find . -iname "*$1*" ${@:2} }
 #function r() { grep "$1" ${@:2} -R . }

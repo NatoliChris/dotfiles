@@ -62,7 +62,6 @@
     set spell                           " Spell checking on
     set hidden                          " Allow buffer switching without saving
     set nofoldenable                    " Stop autofolding when editing
-    set smarttab
 
     " Instead of reverting the cursor to the last position in the buffer, we
     " set it to the first line when editing a git commit message
@@ -135,7 +134,6 @@
     set ignorecase                  " Case insensitive search
     set smartcase                   " Case sensitive when uc present
     set wildmenu                    " Show list instead of just completing
-    set wildmode=longest,full       " Command <Tab> completion, list matches, then longest common part, then all.
     set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
     set scrolljump=5                " Lines to scroll when cursor leaves screen
     set scrolloff=3                 " Minimum lines to keep above and below cursor
@@ -183,6 +181,7 @@
     autocmd FileType haskell setlocal commentstring=--\ %s
     " Workaround broken colour highlighting in Haskell
     autocmd FileType haskell setlocal nospell
+    autocmd FileType javascript setlocal nospell
 
     " Setting Solidity
     autocmd BufNewFile,BufRead *.sol set syntax=solidity
@@ -192,15 +191,15 @@
 " }
 
 " YouCompleteMe {
-    let g:loaded_youcompleteme = 1
-    let g:ycm_semantic_triggers = {
-                \ 'tex'  : ['{', '\']
-                \}
-    let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-    let g:ycm_min_num_of_chars_for_completion = 1
-    let g:ycm_auto_trigger = 1
-    set completeopt=longest,menuone
-
+"     let g:loaded_youcompleteme = 1
+"     let g:ycm_semantic_triggers = {
+"                 \ 'tex'  : ['{', '\']
+"                 \}
+"     let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+"     let g:ycm_min_num_of_chars_for_completion = 1
+"     let g:ycm_auto_trigger = 1
+"     set completeopt=longest,menuone
+" 
 " }
 "
 
@@ -387,7 +386,6 @@
     " Editor Stuff: {
         Plugin 'vim-scripts/PreserveNoEOL'
         Plugin 'editorconfig/editorconfig-vim'
-        Plugin 'ervandew/supertab'
         Plugin 'godlygeek/tabular'
         Plugin 'scrooloose/nerdtree'
         Plugin 'jistr/vim-nerdtree-tabs'
