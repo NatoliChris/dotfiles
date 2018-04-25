@@ -62,6 +62,7 @@
     set spell                           " Spell checking on
     set hidden                          " Allow buffer switching without saving
     set nofoldenable                    " Stop autofolding when editing
+    set modifiable
 
     " Instead of reverting the cursor to the last position in the buffer, we
     " set it to the first line when editing a git commit message
@@ -188,6 +189,14 @@
 
     " Setting LaTeX to spell
     autocmd FileType tex setlocal spell
+" }
+
+" Vim-LaTeX {
+    let g:tex_flavor='latex'
+    let g:Tex_UseMakefile = 1
+    let g:Tex_DefaultTargetFormat = 'pdf'
+    let g:Tex_FormatDependency_pdf = 'pdf'
+    let g:TexCompileRule_pdf = 'latexmk -f -pdf -outdir=build $*'
 " }
 
 " YouCompleteMe {
@@ -416,6 +425,10 @@
         Plugin 'drslump/vim-syntax-js'
         Plugin 'elzr/vim-json'
         Plugin 'pangloss/vim-javascript'
+    " }
+
+    " LaTeX {
+        Plugin 'vim-latex/vim-latex'
     " }
 
     " NginX {

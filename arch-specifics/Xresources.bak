@@ -100,4 +100,4 @@ urxvt.keysym.M-minus:	font-size:decsave
 urxvt.keysym.M-plus:	font-size:incsave
 
 *.font:                     xft:Fantasque Sans Mono:size=11:dpi=96
-URxvt.font:	xft:Fantasque Sans Mono:size=12:dpi=96
+URxvt.font:	xft:Fantasque Sans Mono:size=14:dpi=96
