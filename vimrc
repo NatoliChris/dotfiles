@@ -33,6 +33,8 @@
         "set term=$TERM          " Make arrow and other keys work
     endif
     filetype plugin indent on   " Automatically detect file types.
+    filetype plugin on
+    filetype indent on
     syntax on                   " Syntax highlighting
     syntax enable
     set mouse=a                 " Automatically enable mouse usage
@@ -63,6 +65,7 @@
     set hidden                          " Allow buffer switching without saving
     set nofoldenable                    " Stop autofolding when editing
     set modifiable
+    set encoding=UTF-8
 
     " Instead of reverting the cursor to the last position in the buffer, we
     " set it to the first line when editing a git commit message
@@ -147,6 +150,7 @@
     let g:nerdtree_tabs_open_on_console_startup = 0
     let g:nerdtree_tabs_synchronize_view = 1
     let g:nerdtree_tabs_focus_on_files = 1
+
 " }
 
 " Tables {
@@ -180,6 +184,7 @@
 
     " Workaround vim-commentary for Haskell
     autocmd FileType haskell setlocal commentstring=--\ %s
+
     " Workaround broken colour highlighting in Haskell
     autocmd FileType haskell setlocal nospell
     autocmd FileType javascript setlocal nospell
@@ -189,14 +194,33 @@
 
     " Setting LaTeX to spell
     autocmd FileType tex setlocal spell
+
 " }
 
 " Vim-LaTeX {
     let g:tex_flavor='latex'
-    let g:Tex_UseMakefile = 1
-    let g:Tex_DefaultTargetFormat = 'pdf'
-    let g:Tex_FormatDependency_pdf = 'pdf'
-    let g:TexCompileRule_pdf = 'latexmk -f -pdf -outdir=build $*'
+    let g:Tex_MultipleCompileFormats = "pdf,dvi"
+    let g:Tex_ViewRule_pdf = "xdg-open >/dev/null 2>/dev/null"
+    let g:Tex_FormatDependency_pdf="pdf"
+    let g:Tex_DefaultTargetFormat = "pdf"
+
+
+    let g:Tex_Debug = 0
+    let g:Tex_DebugLog = "Debug.log"
+
+    " let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode -file-line-error-style $*'
+    let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode -file-line-error-style $*'
+    let g:Tex_IgnoredWarnings =
+                \"Underfull\n".
+                \"Overfull\n".
+                \"Font shape\n".
+                \"Size substitutions with differences\n".
+                \"specifier changed to\n".
+                \"You have requested\n".
+                \"Missing number, treated as zero.\n".
+                \"There were undefined references\n".
+                \"A float is stuck\n".
+                \"Citation %.%# undefined\n"
 " }
 
 " YouCompleteMe {
@@ -247,12 +271,12 @@
     " The default leader is '\', but many people prefer ',' as it's in a standard
     " location. To override this behavior and set it back to '\' (or any other
     " character) add the following to your .vimrc.bundles.local file:
-    "   let g:spf13_leader='\'
-    if !exists('g:spf13_leader')
-        let mapleader = ','
-    else
-        let mapleader=g:spf13_leader
-    endif
+    let g:spf13_leader='\'
+    "if !exists('g:spf13_leader')
+    "    let mapleader = ','
+    "else
+    "    let mapleader=g:spf13_leader
+    "endif
 
     " Easier escape
     imap jj <Esc>
@@ -398,10 +422,12 @@
         Plugin 'godlygeek/tabular'
         Plugin 'scrooloose/nerdtree'
         Plugin 'jistr/vim-nerdtree-tabs'
+        Plugin 'ryanoasis/vim-devicons'
         Bundle 'scrooloose/syntastic'
         Plugin 'tommcdo/vim-exchange'
         Plugin 'ConradIrwin/vim-bracketed-paste'
         Plugin 'airblade/vim-gitgutter'
+        Plugin 'tpope/vim-git'
         Plugin 'honza/vim-snippets'
         Plugin 'tpope/vim-abolish'
         Plugin 'tpope/vim-commentary'
@@ -414,6 +440,7 @@
         Plugin 'majutsushi/tagbar'
         Bundle 'kien/ctrlp.vim'
         Plugin 'Valloric/YouCompleteMe'
+        Plugin 'ternjs/tern_for_vim'
     "" }
 
     " colorschemes {
@@ -425,10 +452,6 @@
         Plugin 'drslump/vim-syntax-js'
         Plugin 'elzr/vim-json'
         Plugin 'pangloss/vim-javascript'
-    " }
-
-    " LaTeX {
-        Plugin 'vim-latex/vim-latex'
     " }
 
     " NginX {
@@ -452,6 +475,10 @@
 
     " Rust {
         Plugin 'rust-lang/rust.vim'
+    " }
+
+    " LateX {
+        Plugin 'vim-latex/vim-latex'
     " }
 
     " Solidity {
@@ -605,3 +632,11 @@
     colorscheme base16-tomorrow
     hi Normal guibg=NONE ctermbg=NONE
 "}
+
+" Sass Compile {
+    autocmd BufWritePost *.scss execute "!sassc -t compressed <afile> > <afile>.css"
+" }
+
+
+
+set guifont=FantasqueSansMono\ Nerd\ Font\ 11

@@ -124,13 +124,13 @@ bindsym $mod+Shift+r exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # multiple monitor
 #bindsym $mod+a move workspace to output HDMI1
 bindsym $mod+a move workspace to output DP2
-bindsym $mod+s move workspace to output LVDS1
+bindsym $mod+s move workspace to output eDP1
 bindsym $mod+d move workspace to output VGA1
 bindsym $mod+w move workspace to output HDMI1
 bindsym $mod+e move workspace to output DP1
 #bindsym $mod+Shift+a move container to output HDMI1
 bindsym $mod+Shift+a move container to output DP2
-bindsym $mod+Shift+s move container to output LVDS1
+bindsym $mod+Shift+s move container to output eDP1
 bindsym $mod+Shift+d move container to output VGA1
 bindsym $mod+Shift+w move container to output HDMI1
 bindsym $mod+Shift+e move container to output DP1
@@ -182,7 +182,7 @@ client.urgent           #073642 #DC322F #DC322F #Dc322F
 bar {
         position top
         status_command python ~/.i3pystatus.conf
-        tray_output LVDS1
+        tray_output eDP1
         font xft:SourceSansPro 10
         #mode hide
         separator_symbol " · "
@@ -213,9 +213,16 @@ exec "dex -a -e i3"
 
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle # mute sound
+#bindsym XF86AudioLowerVolume exec amixer set Master 2%- unmute
+#bindsym XF86AudioRaiseVolume exec amixer set Master 2%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.i3/bin/volume_control.sh -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.i3/bin/volume_control.sh +5%
 
 # Sreen brightness controls
 # bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness

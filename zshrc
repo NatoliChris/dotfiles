@@ -7,16 +7,15 @@ export EDITOR=vim
 source ~/etc/antigen.zsh
 
 antigen use oh-my-zsh
-
 #ANTIGEN
 antigen bundle robbyrussell/oh-my-zsh plugins/mercurial
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle simonwhitaker/gibo
-#antigen bundle tarruda/zsh-autosuggestions
+antigen bundle robbyrussell/oh-my-zsh plugins/shrink-path
+# antigen bundle tarruda/zsh-autosuggestions
 antigen bundle autojump
-#antigen bundle zsh-users/zsh-completions src
+# antigen bundle zsh-users/zsh-completions src
 antigen bundle ssh-agent
-#
 antigen apply
 
 #source $ZSH/oh-my-zsh.sh
@@ -71,12 +70,14 @@ ZSH_CUSTOM=$HOME/etc/zsh
 plugins=(git)
 # User configuration
 
-export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Export for GOLang
+export GOROOT=/usr/lib/go
 export GOPATH=~/dev/go
 export PATH="$PATH:$GOPATH/bin"
+export GOCACHE=off
 
 #Databases 2 Path ---------------------------------------------------------------------------
 # export PATH=$PATH:"/Applications/Postgres.app/Contents/Versions/9.4/bin/"
@@ -131,54 +132,54 @@ BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh"
 [[ -s "$BASE16_SHELL" ]] && source $BASE16_SHELL
 
 
-echo "Hi Chris"
+# echo "Hi Chris"
 #Startup scritps
 #echo -e '
 # \033[31m▒▒▒▒\033[0m \033[1m\033[31m▒▒\033[0m   \033[32m▒▒▒▒\033[0m \033[1m\033[32m▒▒\033[0m   \033[33m▒▒▒▒\033[0m \033[1m\033[33m▒▒\033[0m   \033[34m▒▒▒▒\033[0m \033[1m\033[34m▒▒\033[0m   \033[35m▒▒▒▒\033[0m \033[1m\033[35m▒▒\033[0m   \033[36m▒▒▒▒\033[0m \033[1m\033[36m▒▒\033[0m   \033[37m▒▒▒▒\033[0m \033[1m\033[37m▒▒\033[0m
 # \033[31m▒▒ N\033[0m \033[1m\033[31m▒▒\033[0m   \033[32m▒▒ A\033[0m \033[1m\033[32m▒▒\033[0m   \033[33m▒▒ T\033[0m \033[1m\033[33m▒▒\033[0m   \033[34m▒▒ A\033[0m \033[1m\033[34m▒▒\033[0m   \033[35m▒▒ L\033[0m \033[1m\033[35m▒▒\033[0m   \033[36m▒▒ I\033[0m \033[1m\033[36m▒▒\033[0m   \033[37m▒▒ E\033[0m \033[1m\033[37m▒▒\033[0m
 # \033[31m▒▒ \033[0m\033[1m\033[31m▒▒▒▒\033[0m   \033[32m▒▒ \033[0m\033[1m\033[32m▒▒▒▒\033[0m   \033[33m▒▒ \033[0m\033[1m\033[33m▒▒▒▒\033[0m   \033[34m▒▒ \033[0m\033[1m\033[34m▒▒▒▒\033[0m   \033[35m▒▒ \033[0m\033[1m\033[35m▒▒▒▒\033[0m   \033[36m▒▒ \033[0m\033[1m\033[36m▒▒▒▒\033[0m   \033[37m▒▒ \033[0m\033[1m\033[37m▒▒▒▒\033[0m
 #'
-echo -e '\033[35m'
-python3 ~/dev/natdate.py
-echo -e '\033[0m'
-
-echo -e '\033[31m
-
- .*.        /~ .~\    /~  ~\    /~ .~\    /~  ~\
- ***       `      `\/`      *  `      `\/`      *
-  V       (                .*)(               . *)
-/\|/\      \     Chris  . *./  \    Natalie . *./
-  |         `\ .      . .*/`    `\ .      . .*/`       .*.
-  |           `\ * .*. */` _    _ `\ * .*. */`         ***
-                `\ * */`  ( `\/`*)  `\ * */`          /\V
-                  `\/`     \   */`    `\/`              |/\
-                            `\/`                        |
-                         I love you
-         my partner, my love, my happiness, my life
-
---++==##<<{{  infinitely, truly, so so muchly  }}>>##==++--
-\033[0m	
-'
-
-echo -e '\033[32m
-Every day I am thinking of you,
-Every second I smile because of you,
-Every moment I get to spend with you,
-Is a moment of pure happiness.
-
-So honey, please finish your work soon.
-Please try so that we can spend more time together.
-Please remember that I am here for you.
-If not right next to you, I am here in your heart.
-
-Many many huuuuuuuuuuuuuuuuuugggsss
-Hugs from anear, hugs from afar.
-Hugs to my dear, hugs for forever.
-
-I love you so so so much.
-Sempre e sempre io prometto.
-\033[0m
-'
+# echo -e '\033[35m'
+# python3 ~/dev/natdate.py
+# echo -e '\033[0m'
+# 
+# echo -e '\033[31m
+# 
+#  .*.        /~ .~\    /~  ~\    /~ .~\    /~  ~\
+#  ***       `      `\/`      *  `      `\/`      *
+#   V       (                .*)(               . *)
+# /\|/\      \     Chris  . *./  \    Natalie . *./
+#   |         `\ .      . .*/`    `\ .      . .*/`       .*.
+#   |           `\ * .*. */` _    _ `\ * .*. */`         ***
+#                 `\ * */`  ( `\/`*)  `\ * */`          /\V
+#                   `\/`     \   */`    `\/`              |/\
+#                             `\/`                        |
+#                          I love you
+#          my partner, my love, my happiness, my life
+# 
+# --++==##<<{{  infinitely, truly, so so muchly  }}>>##==++--
+# \033[0m	
+# '
+# 
+# echo -e '\033[32m
+# Every day I am thinking of you,
+# Every second I smile because of you,
+# Every moment I get to spend with you,
+# Is a moment of pure happiness.
+# 
+# So honey, please finish your work soon.
+# Please try so that we can spend more time together.
+# Please remember that I am here for you.
+# If not right next to you, I am here in your heart.
+# 
+# Many many huuuuuuuuuuuuuuuuuugggsss
+# Hugs from anear, hugs from afar.
+# Hugs to my dear, hugs for forever.
+# 
+# I love you so so so much.
+# Sempre e sempre io prometto.
+# \033[0m
+# '
 export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
@@ -204,16 +205,16 @@ function f() { find . -iname "*$1*" ${@:2} }
 #    zle autosuggest-start
 #}
 #zle -N zle-line-init
-echo "FROM KUMAR:"
-echo "My TODO List: 1. Go to sleep."
-echo "              2. Eat."
-echo "              3. Sleep."
-echo "              4. Code."
-echo "              5. GOTO 1."
-echo "Sammi: GO TO SLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEP"
-echo "Collis: Sleep. Bitch"
-
-echo "From Elie: PLEASE SLEEEEEEEPPPP CHRISSS!!!"
+# echo "FROM KUMAR:"
+# echo "My TODO List: 1. Go to sleep."
+# echo "              2. Eat."
+# echo "              3. Sleep."
+# echo "              4. Code."
+# echo "              5. GOTO 1."
+# echo "Sammi: GO TO SLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEP"
+# echo "Collis: Sleep. Bitch"
+# 
+# echo "From Elie: PLEASE SLEEEEEEEPPPP CHRISSS!!!"
 
 source ~/.bash_aliases
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
@@ -260,6 +261,6 @@ function kc() {
     eval `keychain --eval --agents ssh --timeout 5 --quiet ${filename}`
 }
 
-echo "We love you Chris"
-echo "Don't drop computer science because you're great at it. k thx bye"
+# echo "We love you Chris"
+# echo "Don't drop computer science because you're great at it. k thx bye"
 

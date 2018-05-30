@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=udiskie --no-automount --tray --use-udisks2
+Icon=udiskie
+Terminal=false
+Name=Udiskie
+Type=Application

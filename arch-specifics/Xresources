@@ -55,7 +55,7 @@
 !===============================================================================
 xft*antialias:              true
 xft*autohint:               false
-xft*dpi:                    176
+xft*dpi:                    96
 xft*hinting:                true
 xft*hintstyle:              hintslight
 xft*rgba:                   rgb
@@ -75,7 +75,7 @@ urxvt.fading:               false
 urxvt.fadeColor:	#1d1f21
 urxvt.iso14755:             false
 urxvt.iso14755_52:          false
-urxvt.lineSpace:            0
+urxvt.lineSpace:            -1
 urxvt.letterSpace:          -1
 urxvt.saveLines:            65535
 urxvt.scrollBar:            false
@@ -89,6 +89,17 @@ urxvt.urgentOnBell:         false
 urxvt.visualBell:           false
 !===============================================================================
 
+!===============================================================================
+! XScreenSaver
+!===============================================================================
+xscreensaver.fade: True
+xscreensaver.fadeSeconds: 0:00:01
+xscreensaver.Dialog.borderwidth: 0
+xscreensaver.Dialog.internalBorderWidth: 0
+xscreensaver.Dialog.shadowThickness: 0
+xscreensaver.passwd.thermometer.width: 0
+!===============================================================================
+
 !*.font:                     xft:Inconsolata-g:size=11:dpi=96
 !*.font:                     xft:Anonymous Pro:size=12:dpi=96
 
@@ -99,5 +110,5 @@ urxvt.keysym.M-equal:	font-size:reset
 urxvt.keysym.M-minus:	font-size:decsave
 urxvt.keysym.M-plus:	font-size:incsave
 
-*.font:                     xft:Fantasque Sans Mono:size=11:dpi=96
-URxvt.font:	xft:Fantasque Sans Mono:size=13:dpi=96
+*.font: xft:Fantasque Sans Mono:size=11:dpi=96
+URxvt.font:	xft:Fantasque Sans Mono:size=11:dpi=96
