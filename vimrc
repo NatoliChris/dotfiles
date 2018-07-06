@@ -203,11 +203,10 @@
     let g:Tex_ViewRule_pdf = "xdg-open >/dev/null 2>/dev/null"
     let g:Tex_FormatDependency_pdf="pdf"
     let g:Tex_DefaultTargetFormat = "pdf"
-
-
+    let g:Tex_GotoError=0
     let g:Tex_Debug = 0
     let g:Tex_DebugLog = "Debug.log"
-
+    let g:TCLevel = 4
     " let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode -file-line-error-style $*'
     let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode -file-line-error-style $*'
     let g:Tex_IgnoredWarnings =
