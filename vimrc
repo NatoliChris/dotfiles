@@ -129,7 +129,7 @@
     set backspace=indent,eol,start                  " Backspace for dummies
     set linespace=0                                 " No extra spaces between rows
     set nu                                          " Line numbers on
-    set relativenumber                              " Sets relative number
+    " set relativenumber                              " Sets relative number
     set colorcolumn=80                              " Set the maximum characters on a line to 100
     set showmatch                                   " Show matching brackets/parenthesis
     set incsearch                                   " Find as you type search

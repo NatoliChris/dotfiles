@@ -6,7 +6,7 @@ export EDITOR=vim
 
 source ~/etc/antigen.zsh
 
-#ANTIGEN
+# ANTIGEN
 antigen use oh-my-zsh
 antigen bundle robbyrussell/oh-my-zsh plugins/mercurial
 antigen bundle zsh-users/zsh-syntax-highlighting
