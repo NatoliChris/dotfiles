@@ -1,12 +1,21 @@
 # Path to your oh-my-zsh installation.
 # export ZSH=/Users/natc/.oh-my-zsh
 
+############################################################
+# Setting up defaults
+############################################################
+
 export LC_ALL="en_AU.utf8"
 export EDITOR=vim
 
+
+############################################################
+# Antigen for ZSH (Plugin time)
+############################################################
+
 source ~/etc/antigen.zsh
 
-#ANTIGEN
+# ANTIGEN
 antigen use oh-my-zsh
 antigen bundle robbyrussell/oh-my-zsh plugins/mercurial
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -16,12 +25,53 @@ antigen bundle ssh-agent
 antigen theme $HOME/etc/zsh/themes theGodtheme
 antigen apply
 
-# antigen bundle robbyrussell/oh-my-zsh plugins/shrink-path
-# antigen bundle tarruda/zsh-autosuggestions
-# antigen bundle zsh-users/zsh-completions src
-#source $ZSH/oh-my-zsh.sh
 
-# ~/etc/./osx
+############################################################
+# ZSH Stuff
+############################################################
+
+ZSH_CUSTOM=$HOME/etc/zsh
+
+source $ZSH_CUSTOM/autols.zsh
+plugins=(git)
+
+alias zshconfig="vim ~/.zshrc"
+alias rzsh="source ~/.zshrc"
+
+############################################################
+# Source files
+############################################################
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+source ~/.bash_aliases
+
+# Set up personal stuff
+for d in dotfiles dev/dotfiles etc/dotfiles; do
+    if [[ -d $d ]]; then
+      export DOTFILES=$d
+    fi
+done
+
+if [[ -d $DOTFILES/personal ]]; then
+  source $DOTFILES/personal/personal
+fi
+
+# Am I on a mac?
+cat /etc/os-release | awk 'BEGIN{ RS = ""; FS = "\n"}{print $1}' | if grep -qi "linux"; then ; else source ./etc/osx; fi
+
+############################################################
+# Base 16 Shell (Colours etc)
+############################################################
+
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh"
+[[ -s "$BASE16_SHELL" ]] && source $BASE16_SHELL
+
+
+############################################################
+# Misc Oh My Zsh default config
+############################################################
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -59,58 +109,52 @@ antigen apply
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-ZSH_CUSTOM=$HOME/etc/zsh
-
+#
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
 # User configuration
 
+
+############################################################
+# Path Information
+############################################################
+
+
+#################
+# Normal Path
+#################
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# Export for GOLang
+
+#################
+# Golang
+#################
+
 export GOROOT=/usr/lib/go
 export GOPATH=~/dev/go
 export PATH="$PATH:$GOPATH/bin"
 export GOCACHE=off
 
-#Databases 2 Path ---------------------------------------------------------------------------
-# export PATH=$PATH:"/Applications/Postgres.app/Contents/Versions/9.4/bin/"
-
+#################
 # Arcanist
+#################
 export PATH="$PATH:$HOME/dev/arcanist/arcanist/bin/"
 
-# BIN folder
+#################
+# BIN Folder
+#################
 export PATH="$PATH:$HOME/bin"
-
-
-
-
-# source $HOME/etc/osx
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
 setopt correct
-
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -118,69 +162,12 @@ setopt correct
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias rzsh="source ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source $ZSH_CUSTOM/autols.zsh
 
-
-
-# Base 16 Shell
-
-BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh"
-[[ -s "$BASE16_SHELL" ]] && source $BASE16_SHELL
-
-
-echo "Hi Chris"
-# Startup scritps
-echo -e '
- \033[31m▒▒▒▒\033[0m \033[1m\033[31m▒▒\033[0m   \033[32m▒▒▒▒\033[0m \033[1m\033[32m▒▒\033[0m   \033[33m▒▒▒▒\033[0m \033[1m\033[33m▒▒\033[0m   \033[34m▒▒▒▒\033[0m \033[1m\033[34m▒▒\033[0m   \033[35m▒▒▒▒\033[0m \033[1m\033[35m▒▒\033[0m   \033[36m▒▒▒▒\033[0m \033[1m\033[36m▒▒\033[0m   \033[37m▒▒▒▒\033[0m \033[1m\033[37m▒▒\033[0m
- \033[31m▒▒ N\033[0m \033[1m\033[31m▒▒\033[0m   \033[32m▒▒ A\033[0m \033[1m\033[32m▒▒\033[0m   \033[33m▒▒ T\033[0m \033[1m\033[33m▒▒\033[0m   \033[34m▒▒ A\033[0m \033[1m\033[34m▒▒\033[0m   \033[35m▒▒ L\033[0m \033[1m\033[35m▒▒\033[0m   \033[36m▒▒ I\033[0m \033[1m\033[36m▒▒\033[0m   \033[37m▒▒ E\033[0m \033[1m\033[37m▒▒\033[0m
- \033[31m▒▒ \033[0m\033[1m\033[31m▒▒▒▒\033[0m   \033[32m▒▒ \033[0m\033[1m\033[32m▒▒▒▒\033[0m   \033[33m▒▒ \033[0m\033[1m\033[33m▒▒▒▒\033[0m   \033[34m▒▒ \033[0m\033[1m\033[34m▒▒▒▒\033[0m   \033[35m▒▒ \033[0m\033[1m\033[35m▒▒▒▒\033[0m   \033[36m▒▒ \033[0m\033[1m\033[36m▒▒▒▒\033[0m   \033[37m▒▒ \033[0m\033[1m\033[37m▒▒▒▒\033[0m
-'
-echo -e '\033[35m'
-python3 ~/dev/natdate.py
-echo -e '\033[0m'
-
-echo -e '\033[31m
-
- .*.        /~ .~\    /~  ~\    /~ .~\    /~  ~\
- ***       `      `\/`      *  `      `\/`      *
-  V       (                .*)(               . *)
-/\|/\      \     Chris  . *./  \    Natalie . *./
-  |         `\ .      . .*/`    `\ .      . .*/`       .*.
-  |           `\ * .*. */` _    _ `\ * .*. */`         ***
-                `\ * */`  ( `\/`*)  `\ * */`          /\V
-                  `\/`     \   */`    `\/`              |/\
-                            `\/`                        |
-                         I love you
-         my partner, my love, my happiness, my life
-
---++==##<<{{  infinitely, truly, so so muchly  }}>>##==++--
-\033[0m	
-'
-
-echo -e '\033[32m
-Every day I am thinking of you,
-Every second I smile because of you,
-Every moment I get to spend with you,
-Is a moment of pure happiness.
-
-So honey, please finish your work soon.
-Please try so that we can spend more time together.
-Please remember that I am here for you.
-If not right next to you, I am here in your heart.
-
-Many many huuuuuuuuuuuuuuuuuugggsss
-Hugs from anear, hugs from afar.
-Hugs to my dear, hugs for forever.
-
-I love you so so so much.
-Sempre e sempre io prometto.
-\033[0m
-'
-
+############################################################
+# NodeJS 
+############################################################
 
 export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -193,14 +180,12 @@ unset MANPATH
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 
+############################################################
 #Custom functions
+############################################################
+
 function f() { find . -iname "*$1*" ${@:2} }
 #function r() { grep "$1" ${@:2} -R . }
-
-#Plugins
-# source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/autosuggestions.zsh
-#source ~/.oh-my-zsh/plugins/mercurial/mercurial.plugin.zsh
 
 # Enable autosuggestions automatically.
 #zle-line-init() {
@@ -208,21 +193,7 @@ function f() { find . -iname "*$1*" ${@:2} }
 #}
 #zle -N zle-line-init
 #
-echo "FROM KUMAR:"
-echo "My TODO List: 1. Go to sleep."
-echo "              2. Eat."
-echo "              3. Sleep."
-echo "              4. Code."
-echo "              5. GOTO 1."
-echo "Sammi: GO TO SLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEP"
-echo "Collis: Sleep. Bitch"
 
-echo "From Elie: PLEASE SLEEEEEEEPPPP CHRISSS!!!"
-
-echo "We love you Chris"
-echo "Don't drop computer science because you're great at it. k thx bye"
-
-source ~/.bash_aliases
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 export PATH="/usr/local/sbin:$PATH"
