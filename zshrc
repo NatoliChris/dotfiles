@@ -164,7 +164,6 @@ setopt correct
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 ############################################################
 # NodeJS 
 ############################################################
@@ -193,7 +192,6 @@ function f() { find . -iname "*$1*" ${@:2} }
 #}
 #zle -N zle-line-init
 #
-
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 export PATH="/usr/local/sbin:$PATH"

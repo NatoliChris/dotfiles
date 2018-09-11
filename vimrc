@@ -406,11 +406,11 @@
     let g:syntastic_python_pyflakes_args='--ignore=E402'
     let g:syntastic_sh_shellcheck_args='-x'
     let g:syntastic_c_compiler_options='--std=c11'
-    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [],'passive_filetypes': ['html', 'ejs'] }
+    " let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': [],'passive_filetypes': ['html', 'ejs'] }
     let g:syntastic_javascript_eslint_exe = './node_modules/.bin/eslint'
     let g:syntastic_javascript_checkers=['eslint']
     let g:syntastic_go_checkers=['go']
-
+    let g:syntastic_rust_checkers=['cargo']
 " }
 
 
