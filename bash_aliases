@@ -18,6 +18,7 @@ alias gco='git checkout'
 # Docker
 alias d='sudo docker'
 alias dco='sudo docker-compose'
+alias dm='sudo docker-machine'
 
 # Misc
 alias v='vim'
