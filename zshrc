@@ -125,7 +125,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh"
 #################
 # Normal Path
 #################
-export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin"
+export PATH="$HOME/bin:/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 
@@ -251,4 +251,5 @@ function newReview() {
 
   echo -e '#\n\n## Summary\n\n## Strengths\n\n## Weaknesses\n\n## Other Comments' > $filename.md
 }
+
 

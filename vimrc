@@ -1,4 +1,4 @@
-"  vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
+"  vim: set sw=4 ts=4 sts=4 et tw=80 foldmarker={,} foldlevel=0 foldmethod=marker spell:
 
 " Environment {
 
@@ -411,6 +411,7 @@
     let g:syntastic_javascript_checkers=['eslint']
     let g:syntastic_go_checkers=['go']
     let g:syntastic_rust_checkers=['cargo']
+    let g:rust_cargo_check_tests = 1
 " }
 
 
@@ -440,6 +441,7 @@
         Bundle 'ctrlpvim/ctrlp.vim'
         Plugin 'Valloric/YouCompleteMe'
         Plugin 'ternjs/tern_for_vim'
+        Plugin 'bitc/vim-bad-whitespace'
     "" }
 
     " colorschemes {
