@@ -199,7 +199,7 @@
 
 " Vim-LaTeX {
     let g:tex_flavor='latex'
-    let g:Tex_MultipleCompileFormats = "pdf,dvi"
+    let g:Tex_MultipleCompileFormats = "pdf,bibtex,dvi"
     let g:Tex_ViewRule_pdf = "xdg-open >/dev/null 2>/dev/null"
     let g:Tex_FormatDependency_pdf="pdf"
     let g:Tex_DefaultTargetFormat = "pdf"
@@ -437,7 +437,7 @@
         Plugin 'tpope/vim-surround'
         Plugin 'tpope/vim-unimpaired'
         Plugin 'majutsushi/tagbar'
-        Bundle 'kien/ctrlp.vim'
+        Bundle 'ctrlpvim/ctrlp.vim'
         Plugin 'Valloric/YouCompleteMe'
         Plugin 'ternjs/tern_for_vim'
     "" }

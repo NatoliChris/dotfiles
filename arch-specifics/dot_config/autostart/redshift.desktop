@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=redshift -t 6500k:2700k
+Exec=redshift -t 6000:1300 -l -33.95:151.04
 Icon=redshift
 Terminal=false
 Name=Redshift
