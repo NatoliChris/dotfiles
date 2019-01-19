@@ -19,63 +19,46 @@ case $userclean in
         echo -e "$YELLOW\rCleaning Skipped"
     ;;
     *)
-        echo -e "$GREEN\rStarting Clean"
+        echo -e "$GREEN\rStarting Clean$RESETCOL"
         printf "zshrc"
         if [ -e ~/.zshrc -o -h ~/.zshrc ]; then
             rm ~/.zshrc
-            echo -e "$NC[$GREEN OK $NC]"
+            echo -e "\t$RESETCOL[$GREEN OK $RESETCOL]"
         else
-            echo -e "$NC[$YELLOW NOT FOUND $NC]"
+            echo -e "\t$RESETCOL[$YELLOW NOT FOUND $RESETCOL]"
         fi
 
         printf "bashrc"
         if [ -e ~/.bashrc -o -h ~/.bashrc ]; then
             rm ~/.bashrc
-            echo -e "$NC[$GREEN OK $NC]"
+            echo -e "\t$RESETCOL[$GREEN OK $RESETCOL]"
         else
-            echo -e "$NC[$YELLOW NOT FOUND $NC]"
+            echo -e "\t$RESETCOL[$YELLOW NOT FOUND $RESETCOL]"
         fi
 
         printf "bash_aliases"
         if [ -e ~/.bash_aliases -o -h ~/.bash_aliases ]; then
             rm ~/.bash_aliases
-            echo -e "$NC[$GREEN OK $NC]"
+            echo -e "\t$RESETCOL[$GREEN OK $RESETCOL]"
         else
-            echo -e "$NC[$YELLOW NOT FOUND $NC]"
+            echo -e "\t$RESETCOL[$YELLOW NOT FOUND $RESETCOL]"
         fi
 
         printf "vimrc"
         if [ -e ~/.vimrc -o -h ~/.vimrc ]; then
             rm ~/.vimrc
-            echo -e "$NC[$GREEN OK $NC]"
+            echo -e "\t$RESETCOL[$GREEN OK $RESETCOL]"
         else
-            echo -e "$NC[$YELLOW NOT FOUND $NC]"
+            echo -e "\t$RESETCOL[$YELLOW NOT FOUND $RESETCOL]"
         fi
     ;;
 esac
 
+echo -e "
+-------------------------------------------------------------------------------
 
-
-echo "Attempting Clean"
-
-if [ -e ~/.zshrc -o -h ~/.zshrc ]; then
-	rm ~/.zshrc
-fi
-
-if [ -e ~/.bashrc -o -h ~/.bashrc ]; then
-	rm ~/.bashrc
-fi
-
-if [ -e ~/.bash_aliases -o -h ~/.bash_aliases ]; then
-	rm ~/.bash_aliases
-fi
-
-if [ -e ~/.vimrc -o -h ~/.vimrc ]; then
-	rm ~/.vimrc
-fi
-
-echo "Setting up files"
-
+$GREEN\rSetting up files$RESETCOL
+"
 
 ln -s `pwd`/zshrc ~/.zshrc
 ln -s `pwd`/bashrc ~/.bashrc
