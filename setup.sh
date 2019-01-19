@@ -57,13 +57,28 @@ esac
 echo -e "
 -------------------------------------------------------------------------------
 
-$GREEN\rSetting up files$RESETCOL
+$GREEN\rLinking files$RESETCOL
 "
 
+echo "zshrc -> ~/.zshrc"
 ln -s `pwd`/zshrc ~/.zshrc
+
+echo "bashrc -> ~/.bashrc"
 ln -s `pwd`/bashrc ~/.bashrc
+
+echo "bash_aliases -> ~/.bash_aliases"
 ln -s `pwd`/bash_aliases ~/.bash_aliases
+
+echo "vimrc -> ~/.vimrc"
 ln -s `pwd`/vimrc ~/.vimrc
+
+echo -e "
+-------------------------------------------------------------------------------
+
+$GREEN\rSetting up Vim Vundle$RESETCOL
+"
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 
 while [[ $# > 0 ]]; do
