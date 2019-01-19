@@ -385,7 +385,7 @@
     map zh zH
 
     " Mapping parenthesis
-    inoremap {{ {<CR>}<Esc>O
+    " inoremap {{ {<CR>}<Esc>O
     inoremap (( ()<Esc>i
     inoremap [[ []<Esc>i
     inoremap "" ""<Esc>i
