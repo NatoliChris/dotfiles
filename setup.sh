@@ -1,3 +1,61 @@
+#!/bin/bash
+
+YELLOW='\033[1;33m'
+RED='\033[0;30m'
+GREEN='\033[0;32m'
+RESETCOL='\033[0m'
+
+echo -e '
+###############################################################################
+    Welcome to your fresh PC.
+    Time to Setup or Clean.
+###############################################################################
+'
+
+read -n 1 -r -p "Clean Folders? [Y/n] " userclean
+
+case $userclean in
+    [nN])
+        echo -e "$YELLOW\rCleaning Skipped"
+    ;;
+    *)
+        echo -e "$GREEN\rStarting Clean"
+        printf "zshrc"
+        if [ -e ~/.zshrc -o -h ~/.zshrc ]; then
+            rm ~/.zshrc
+            echo -e "$NC[$GREEN OK $NC]"
+        else
+            echo -e "$NC[$YELLOW NOT FOUND $NC]"
+        fi
+
+        printf "bashrc"
+        if [ -e ~/.bashrc -o -h ~/.bashrc ]; then
+            rm ~/.bashrc
+            echo -e "$NC[$GREEN OK $NC]"
+        else
+            echo -e "$NC[$YELLOW NOT FOUND $NC]"
+        fi
+
+        printf "bash_aliases"
+        if [ -e ~/.bash_aliases -o -h ~/.bash_aliases ]; then
+            rm ~/.bash_aliases
+            echo -e "$NC[$GREEN OK $NC]"
+        else
+            echo -e "$NC[$YELLOW NOT FOUND $NC]"
+        fi
+
+        printf "vimrc"
+        if [ -e ~/.vimrc -o -h ~/.vimrc ]; then
+            rm ~/.vimrc
+            echo -e "$NC[$GREEN OK $NC]"
+        else
+            echo -e "$NC[$YELLOW NOT FOUND $NC]"
+        fi
+    ;;
+esac
+
+
+
 echo "Attempting Clean"
 
 if [ -e ~/.zshrc -o -h ~/.zshrc ]; then
