@@ -387,7 +387,7 @@
     " Mapping parenthesis
     " inoremap {{ {<CR>}<Esc>O
     inoremap (( ()<Esc>i
-    inoremap [[ []<Esc>i
+    " inoremap [[ []<Esc>i
     inoremap "" ""<Esc>i
 " }
 "
@@ -446,7 +446,9 @@
 
     " colorschemes {
         Plugin 'altercation/vim-colors-solarized'
-        Bundle 'chriskempson/base16-vim'
+        " TEMPORARY TODO FIX
+        " Bundle 'chriskempson/base16-vim'
+        Bundle 'danielwe/base16-vim'
     " }
 
     " JavaScript {
