@@ -136,7 +136,7 @@ export PATH="$HOME/bin:/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:$HOME/.local
 export GOROOT=/usr/lib/go
 export GOPATH=~/dev/go
 export PATH="$PATH:$GOPATH/bin"
-export GOCACHE=off
+export PATH="$PATH:$GOROOT/bin"
 
 #################
 # Arcanist
@@ -169,7 +169,7 @@ setopt correct
 ############################################################
 
 export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"

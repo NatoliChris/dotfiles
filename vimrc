@@ -188,6 +188,7 @@
     " Workaround broken colour highlighting in Haskell
     autocmd FileType haskell setlocal nospell
     autocmd FileType javascript setlocal nospell
+    autocmd FileType yaml setlocal nospell
 
     " Setting Solidity
     autocmd BufNewFile,BufRead *.sol set syntax=solidity
@@ -357,10 +358,10 @@
 
     " Fix home and end keybindings for screen, particularly on mac
     " - for some reason this fixes the arrow keys too. huh.
-    map [F $
-    imap [F $
-    map [H g0
-    imap [H g0
+    " map [F $
+    " imap [F $
+    " map [H g0
+    " imap [H g0
 
     " For when you forget to sudo.. Really Write the file.
     cmap w!! w !sudo tee % >/dev/null
@@ -386,9 +387,9 @@
 
     " Mapping parenthesis
     " inoremap {{ {<CR>}<Esc>O
-    inoremap (( ()<Esc>i
+    " inoremap (( ()<Esc>i
     " inoremap [[ []<Esc>i
-    inoremap "" ""<Esc>i
+    " inoremap "" ""<Esc>i
 " }
 "
 " Syntastic Settings {
@@ -469,6 +470,7 @@
         Plugin 'plasticboy/vim-markdown'
         Plugin 'dhruvasagar/vim-table-mode'
         Plugin 'shime/vim-livedown'
+        Plugin 'mzlogin/vim-markdown-toc'
     " }
 
     " Python {

@@ -46,6 +46,25 @@ bindsym $mod+g scratchpad show
 # lock screen with xscreensaver
 bindsym $supp+Shift+X exec xscreensaver-command -lock
 bindsym $mod+control+s exec xset dpms force standby
+
+
+# Emacs
+bindsym $supp+Return exec emacs
+
+
+# i3
+bindsym $mod+bracketright gaps outer all plus 5
+bindsym $mod+bracketleft gaps outer all minus 5
+
+bindsym $mod+Shift+braceright gaps inner all plus 5
+bindsym $mod+Shift+braceleft gaps inner all minus 5
+
+bindsym $supp+bracketright gaps outer current plus 5
+bindsym $supp+bracketleft gaps outer current minus 5
+
+bindsym $supp+Shift+braceright gaps inner current plus 5
+bindsym $supp+Shift+braceleft gaps inner current minus 5
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -111,7 +130,7 @@ bindsym $supp+6 workspace 6:1
 bindsym $supp+7 workspace 7:1
 bindsym $supp+8 workspace 8:1
 bindsym $supp+9 workspace 9:1
-bindsym $supp+0 workspace 1:10
+bindsym $supp+0 workspace 10:1
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -232,7 +251,6 @@ bar {
 #bindsym $mod+Shift+C focus floating; mode "floatmove"
 
 exec "dex -a -e i3"
-
 
 # Pulse Audio controls
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
