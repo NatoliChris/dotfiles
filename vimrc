@@ -443,6 +443,7 @@
         Plugin 'Valloric/YouCompleteMe'
         Plugin 'ternjs/tern_for_vim'
         Plugin 'bitc/vim-bad-whitespace'
+        Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
     "" }
 
     " colorschemes {
@@ -464,6 +465,10 @@
 
     " Pandoc {
         Plugin 'vim-pandoc/vim-pandoc-syntax'
+    " }
+
+    " Go {
+        Plugin 'fatih/vim-go'
     " }
 
     " Markdown {
