@@ -1,6 +1,6 @@
-[Desktop Entry]
-Exec=xscreensaver -nosplash
-Icon=xscreensaver
-Terminal=false
-Name=Screensaver
-Type=Application
+# [Desktop Entry]
+# Exec=xscreensaver -nosplash
+# Icon=xscreensaver
+# Terminal=false
+# Name=Screensaver
+# Type=Application

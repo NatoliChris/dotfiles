@@ -1,0 +1,336 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = #aa1d1f21
+#background = #00000000
+background-alt = #001d1f21
+foreground = #c5c8c630
+foreground-alt = #c5c8c630
+primary = #81a2be
+secondary = #b5bd68
+alert = #cc6666
+
+; Tomorrow Theme Colours
+currentline = #282a2e
+selection = #373b41
+red = #cc6666
+orange = #de935f
+yellow = #f0c674
+green = #b5bd68
+aqua = #8abeb7
+blue = #81a2be
+purple = #b294bb
+
+
+
+;-------------------------------------------------------------------------------
+;	Bars
+;-------------------------------------------------------------------------------
+
+[bar/main]
+width = 100%
+height = 25
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+; Fonts
+font-0 = Fantasque Sans Mono:pixelsizesize=10;1
+
+
+; Included modules
+modules-left = i3
+modules-right = xbacklight memory cpu wlan eth battery temperature date
+
+; WM
+# wm-restack = i3
+
+; Tray
+tray-position = right
+tray-padding = 4
+
+; If true, the bar will not shift its
+; contents when the tray changes
+tray-detached = false
+
+; Tray icon max size
+tray-maxsize = 16
+
+; DEPRECATED! Since 3.3.0 the tray always uses pseudo-transparency
+; Enable pseudo transparency
+; Will automatically be enabled if a fully transparent
+; background color is defined using `tray-background`
+tray-transparent = true
+
+; Background color for the tray container 
+; ARGB color (e.g. #f00, #ff992a, #ddff1023)
+; By default the tray container will use the bar
+; background color.
+tray-background = ${colors.background}
+
+;-------------------------------------------------------------------------------
+;	Module Definitions
+;-------------------------------------------------------------------------------
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = ${colors.background}
+label-mode-background = ${colors.background}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.selection}
+label-focused-underline = ${colors.blue}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${colors.selection}
+label-visible-underline = ${colors.green}
+label-visible-padding = 2
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.red}
+label-urgent-padding = 1
+
+; Separator in between workspaces
+; label-separator = |
+
+
+[module/filesystem]
+type = internal/fs
+interval = 30
+
+mount-0 = /
+
+label-mounted = DISK %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 1
+
+date =" %Y-%m-%d"
+date-alt = " %Y-%m-%d"
+
+time = %H:%M:%S
+time-alt = %H:%M:%S
+
+format-underline = ${colors.primary}
+
+label = %time%%date%
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = ⮷ <label-connected>
+format-connected-underline = ${colors.primary}
+label-connected = %essid%
+
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${colors.secondary}
+label-disconnected = no wifi
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = BL:
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #fff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = ${colors.primary}
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+label-indicator-padding = 2
+label-indicator-margin = 1
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+label-indicator-padding = 2
+label-indicator-margin = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+#format-prefix = ""
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+label-indicator-padding = 2
+label-indicator-margin = 1
+
+[module/memory]
+type = internal/memory
+interval = 2
+# format-prefix = ""
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
+label-indicator-padding = 2
+label-indicator-margin = 1
+
+[module/eth]
+type = internal/network
+interface = enp0s25
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = "E:"
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+label-indicator-padding = 2
+label-indicator-margin = 1
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = VOL: <label-volume> <bar-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = muted
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.primary}
+bar-volume-foreground-1 = ${colors.primary}
+bar-volume-foreground-2 = ${colors.primary}
+bar-volume-foreground-3 = ${colors.primary}
+bar-volume-foreground-4 = ${colors.primary}
+bar-volume-foreground-5 = ${colors.secondary}
+bar-volume-foreground-6 = ${colors.secondary}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+label-indicator-padding = 2
+label-indicator-margin = 1
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 99
+
+format-charging = <animation-charging>(<label-charging>)
+format-charging-underline = ${colors.primary}
+
+format-discharging =  <animation-discharging>(<label-discharging>)
+format-discharging-underline = ${colors.secondary}
+
+format-full-prefix = " ||||- "
+format-full-prefix-foreground = ${colors.foreground}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-foreground = ${colors.primary}
+
+animation-charging-0 = |  |
+animation-charging-1 = | /|
+animation-charging-2 = |//|
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 2000
+
+animation-discharging-0 = ||||-
+animation-discharging-1 = | ||-
+animation-discharging-2 = |  |-
+animation-discharging-foreground = ${colors.foreground}
+animation-discharging-framerate = 2000
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <label>
+format-underline = ${colors.primary}
+format-warn = <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+label-indicator-padding = 2
+label-indicator-margin = 1
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.primary}
+
+label-layout-underline = ${colors.primary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+;-------------------------------------------------------------------------------
+;	Settings
+;-------------------------------------------------------------------------------
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 0
+margin-bottom = 5
+
+; vim:ft=dosini

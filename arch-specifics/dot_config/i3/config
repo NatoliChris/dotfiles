@@ -59,18 +59,19 @@ bindsym $mod+g scratchpad show
 
 
 # lock screen with xscreensaver
-bindsym $supp+Shift+X exec xscreensaver-command -lock
+# bindsym $supp+Shift+X exec xscreensaver-command -lock
+bindsym $supp+Shift+X exec i3lock -f -c 000000 -i ~/.i3/lock.png
 bindsym $mod+control+s exec xset dpms force standby
 
 
 # Emacs
-bindsym $supp+Return exec emacs
+# bindsym $supp+Return exec emacs
 
 
 # i3 gaps
 
 # Only enable gaps on a workspace when there is at least one container
-smart_gaps on
+# smart_gaps on
 
 # Only enable outer gaps when there is exactly one container
 # smart_gaps inverse_outer
@@ -334,7 +335,7 @@ bindsym $mod+Shift+P mode "resize"
 
 # Fix borders to have no title
 bindsym Control+Shift+1 [class="^.*"] border toggle
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 hide_edge_borders smart
 
 
@@ -355,26 +356,31 @@ client.urgent           #073642 #DC322F #DC322F #Dc322F
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        position top
-        status_command python ~/.i3pystatus.conf
-        tray_output eDP1
-        font xft:SourceSansPro 10
-        #mode hide
-        separator_symbol " · "
-        colors {
-            background #073642
-            statusline #657B83
-            separator  #93A1A1
-            focused_workspace  #268BD2 #268BD2 #073642
-            active_workspace   #93A1A1 #93A1A1 #073642
-            inactive_workspace #073642 #073642 #839496
-            urgent_workspace   #DC322F #073642 #DC322F
-        }
-        # Fixing shitty scrolling
-        bindsym button4 nop
-        bindsym button5 nop
-}
+#
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.i3/polybar.sh &
+
+# bar {
+#         position top
+#         status_command python ~/.i3pystatus.conf
+#         tray_output LVDS1
+#         font xft:SourceSansPro 8
+#         #mode hide
+#         separator_symbol " · "
+#         colors {
+#             background #073642
+#             statusline #657B83
+#             separator  #93A1A1
+#             focused_workspace  #268BD2 #268BD2 #073642
+#             active_workspace   #93A1A1 #93A1A1 #073642
+#             inactive_workspace #073642 #073642 #839496
+#             urgent_workspace   #DC322F #073642 #DC322F
+#         }
+#         # Fixing shitty scrolling
+#         bindsym button4 nop
+#         bindsym button5 nop
+# }
 
 #mode "floatmove" {
 #	bindsym k move up 10px
@@ -414,4 +420,3 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Fix the keyboards
 exec "setxkbmap -option caps:escape"
-

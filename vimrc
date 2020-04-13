@@ -209,7 +209,7 @@
     let g:Tex_DebugLog = "Debug.log"
     let g:TCLevel = 4
     " let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode -file-line-error-style $*'
-    let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode -file-line-error-style $*'
+    let g:Tex_CompileRule_pdf = 'pdflatex -file-line-error-style $*'
     let g:Tex_IgnoredWarnings =
                 \"Underfull\n".
                 \"Overfull\n".
