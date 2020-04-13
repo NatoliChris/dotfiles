@@ -96,7 +96,8 @@ while [[ $# > 0 ]]; do
             fi
 
             echo "MOVING i3"
-            ln -s `pwd`/arch-specifics/dot_config/i3/config ~/.i3/config
+            # ln -s `pwd`/arch-specifics/dot_config/i3/config ~/.i3/config
+            ln -s `pwd`/arch-specifics/dot_i3/ ~/.i3/config
 
             echo "Moving XResources"
             ln -s `pwd`/arch-specifics/Xresources ~/.Xresources
