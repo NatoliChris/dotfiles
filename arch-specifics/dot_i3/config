@@ -25,7 +25,7 @@ assign [class="Riot"] IM
 assign [class="Slack"] IM
 
 # Presentation
-assign [window_role="presentation"] 2
+assign [window_role="presentation"] 1
 
 # Modkeys
 set $mod Mod4
@@ -45,23 +45,26 @@ floating_modifier $mod
 workspace_auto_back_and_forth yes
 force_display_urgency_hint 1000ms
 # start a terminal
-bindsym $mod+Return exec urxvt -cd "`xcwd`"
+# bindsym $mod+Return exec urxvt -cd "`xcwd`"
+bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+c kill
 # start dmenu (a program launcher)
 # Thanks Harrison
-bindsym $mod+r exec dmenu_run -l 20 -nb "#1B1D1E" -nf "#80D4FF" -sb "#333333" -sf "#FFFFFF" -p Execute: -f -i -fn "Anonymous Pro:size=14" -y 200 #-h 32
+# bindsym $mod+r exec dmenu_run -l 20 -nb "#1B1D1E" -nf "#80D4FF" -sb "#333333" -sf "#FFFFFF" -p Execute: -f -i -fn "Anonymous Pro:size=14" -y 200 #-h 32
 # -w 1520 -x 200 -y 200
+bindsym $mod+r exec --no-startup-id ~/.config/rofi/bin/launcher_colorful
 
 # Scratchpad
 bindsym $mod+Shift+g move scratchpad
 bindsym $mod+g scratchpad show
 
+bindsym --release $mod+$supp+r exec scrot -s /tmp/scrt.png && xclip -selection clipboard -t image/png /tmp/scrt.png && rm /tmp/scrt.png
 
 # lock screen with xscreensaver
 # bindsym $supp+Shift+X exec xscreensaver-command -lock
-bindsym $supp+Shift+X exec i3lock -f -c 000000 -i ~/.i3/lock.png
-bindsym $mod+control+s exec xset dpms force standby
+bindsym $supp+Shift+X exec i3lock -f -c 000000
+# bindsym $mod+control+s exec xset dpms force standby
 
 
 # Emacs
@@ -346,11 +349,20 @@ hide_edge_borders smart
 
 ## Solarized Dark
 # colors                #border #backgr #text   #child_border
-client.focused          #DE2828 #DE2828 #F2EEE2 #dc322f
-client.unfocused        #586E75 #586E75 #073642
-client.focused_inactive #073642 #073642 #CC6666 #A66666
-client.urgent           #073642 #DC322F #DC322F #Dc322F
+#client.focused          #DE2828 #DE2828 #F2EEE2 #dc322f
+##client.focused          #DE2828 #FFFFFF #F2EEE2 #dc322f
+##client.unfocused        #586E75 #586E75 #073642
+##client.focused_inactive #073642 #073642 #CC6666 #A66666
+##client.urgent           #073642 #DC322F #DC322F #Dc322F
 
+## Dracula
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
 
 
 
@@ -391,7 +403,7 @@ exec_always --no-startup-id $HOME/.i3/polybar.sh &
 #
 #bindsym $mod+Shift+C focus floating; mode "floatmove"
 
-exec "dex -a -e i3"
+# exec "dex -a -e i3"
 
 # Pulse Audio controls
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -417,6 +429,15 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# Notifications with dunst
+bindsym control+grave exec dunstctl history-pop
+bindsym control+space exec dunstctl close
+bindsym control+period exec dunstctl context
+
+# Screenshot
+# bindsym $mod+$supp+4 exec scrot
+bindsym $mod+$supp+3 exec scrot -s
 
 # Fix the keyboards
 exec "setxkbmap -option caps:escape"

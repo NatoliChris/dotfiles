@@ -84,7 +84,7 @@ urxvt.scrollBar_floating:   true
 urxvt.scrollstyle:          plain
 urxvt.shading:              35
 urxvt.tintcolor:            #FF0000
-urxvt.transparent:          true
+urxvt.transparent:          false
 urxvt.urgentOnBell:         false
 urxvt.visualBell:           false
 !===============================================================================

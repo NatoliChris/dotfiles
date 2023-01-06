@@ -29,3 +29,5 @@ alias a='atom'
 alias s='ssh'
 alias m='mosh'
 alias lmake='latexmk -f -pdf -interaction=nonstopmode -outdir=build -pvc'
+
+alias z='zathura'
