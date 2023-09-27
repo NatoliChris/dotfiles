@@ -1,4 +1,6 @@
-local lsp = require('lsp-zero').preset({
+local lsp = require("lsp-zero")
+
+lsp.preset({
 	{
 	  float_border = 'rounded',
 	  call_servers = 'local',
@@ -19,6 +21,14 @@ local lsp = require('lsp-zero').preset({
 	}
 })
 
+lsp.ensure_installed({
+	"tsserver",
+	"rust_analyzer",
+	"eslint",
+	"pyright",
+})
+
+require("nvim-lsp-installer").setup {}
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
@@ -76,3 +86,7 @@ end)
 
 
 lsp.setup()
+
+vim.diagnostic.config({
+	virtual_text = true
+})

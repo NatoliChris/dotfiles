@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
     },
      run = ':TSUpdate'
   }
+  use { 'nvim-treesitter/nvim-treesitter-context' }
 
   use {
     "mbbill/undotree"
@@ -42,29 +43,6 @@ return require('packer').startup(function(use)
   use {
     "neovim/nvim-lsp"
   }
-
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    requires = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {                                      -- Optional
-      'williamboman/mason.nvim',
-      run = function()
-        pcall(vim.cmd, 'MasonUpdate')
-      end,
-      },
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     -- Required
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
-    }
-  }
-
-  use { 'numToStr/Comment.nvim', opts = {} }
 
   use { 'ryanoasis/vim-devicons' }
   use ( 'junegunn/fzf', { run = 'fzf#install()' } )
@@ -87,6 +65,48 @@ return require('packer').startup(function(use)
   use { 'ctrlpvim/ctrlp.vim' }
   use { 'lervag/vimtex' }
   use { 'norcalli/nvim-colorizer.lua' }
-  use { 'junegunn/rainbow_parentheses.vim' }
+  use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+          -- LSP Support
+          {'neovim/nvim-lspconfig'},             -- Required
+          {                                      -- Optional
+          'williamboman/mason.nvim',
+          run = function()
+            pcall(vim.cmd, 'MasonUpdate')
+          end,
+        },
+        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+        { 'williamboman/nvim-lsp-installer' },
+
+        -- Autocompletion
+        {'hrsh7th/nvim-cmp'},
+        {'hrsh7th/cmp-buffer'},
+        {'hrsh7th/cmp-path'},
+        {'saadparwaiz1/cmp_luasnip'},
+        {'hrsh7th/cmp-nvim-lsp'},
+        {'hrsh7th/cmp-nvim-lua'},
+
+        -- Snippets
+        {'L3MON4D3/LuaSnip'},
+        {'rafamadriz/friendly-snippets'},
+      }
+    }
+  use { 'folke/zen-mode.nvim' }
+  use { 'folke/twilight.nvim' }
+
+
+use {
+  "folke/todo-comments.nvim",
+  requires = { "nvim-lua/plenary.nvim" },
+  opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+}
+use { 'numToStr/Comment.nvim', opts = {} }
+
 
 end)
