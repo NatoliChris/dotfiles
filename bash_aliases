@@ -21,8 +21,9 @@ alias dco='sudo docker-compose'
 alias dm='sudo docker-machine'
 
 # Misc
-alias v='vim'
-alias vi='vim'
+alias v='nvim'
+alias vi='nvim'
+alias n='nvim'
 alias weather='curl wttr.in'
 alias b='brightness'
 alias a='atom'
