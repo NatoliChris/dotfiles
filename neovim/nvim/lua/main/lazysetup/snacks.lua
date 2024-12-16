@@ -18,7 +18,19 @@ return {
     statuscolumn = { enabled = true },
     terminal = { enabled = true },
     words = { enabled = true },
-    zen = { enabled = true },
+    zen = {
+      enabled = true,
+      backdrop = { transparent = false },
+      toggles = {
+        dim = true,
+        git_signs = true,
+        mini_diff_signs = true,
+      },
+      show = {
+        statusline = false,
+        tabline = false,
+      },
+    },
     styles = {
       notification = {
         -- wo = { wrap = true } -- Wrap notifications

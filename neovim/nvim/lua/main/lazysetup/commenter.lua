@@ -2,6 +2,8 @@ return {
   {
     "preservim/nerdcommenter",
     opts = {},
+    config = function()
+    end
   },
   {
     "folke/todo-comments.nvim",

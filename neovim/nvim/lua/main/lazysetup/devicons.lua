@@ -1,4 +1,6 @@
 return {
   'ryanoasis/vim-devicons',
-  opts = {}
+  opts = {},
+  config = function()
+  end
 }
