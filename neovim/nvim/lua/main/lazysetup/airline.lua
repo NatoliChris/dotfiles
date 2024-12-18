@@ -1,13 +1,12 @@
 return {
-  {
-    "vim-airline/vim-airline",
-    dependencies = {
-      "vim-airline/vim-airline-themes"
-    },
-    opts = {},
-    config = function()
-      vim.cmd.AirlineTheme("bubblegum")
-    end
+  "vim-airline/vim-airline",
+  dependencies = {
+    "vim-airline/vim-airline-themes"
   },
-  "itchyny/lightline.vim",
+  opts = {
+    airline_theme='bubblegum'
+  },
+  config = function()
+    vim.g.airline_theme='bubblegum'
+  end
 }
